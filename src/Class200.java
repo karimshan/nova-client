@@ -1,0 +1,28 @@
+
+
+
+
+import jaclib.memory.Buffer;
+
+class Class200 {
+	protected Buffer aBuffer2440;
+	private GLToolkit aGLToolkit2439;
+
+	Class200(GLToolkit gltoolkit, Buffer buffer) {
+		aGLToolkit2439 = gltoolkit;
+		aBuffer2440 = buffer;
+	}
+
+	Class200(GLToolkit gltoolkit, byte[] bs, int i) {
+		aGLToolkit2439 = gltoolkit;
+		aBuffer2440 = aGLToolkit2439.aNativeHeap6609.a(i, false);
+		if (bs != null)
+			aBuffer2440.a(bs, 0, 0, i);
+	}
+
+	public final void method2012(byte[] bs, int i) {
+		if (aBuffer2440 == null || aBuffer2440.getSize() < i)
+			aBuffer2440 = aGLToolkit2439.aNativeHeap6609.a(i, false);
+		aBuffer2440.a(bs, 0, 0, i);
+	}
+}
